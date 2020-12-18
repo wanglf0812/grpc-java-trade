@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="grpc.trade.dao.TradedetailDao">
+
+	<resultMap id="resultMap"
+		type="grpc.trade.dto.TradeDtlsDto">
+	    <id column="id" property="id" jdbcType="BIGINT" />
+	    <result column="trade_dtls_no" property="tradeDtlsNo" jdbcType="BIGINT" />
+	    <result column="trade_id" property="tradeId" jdbcType="BIGINT" />
+	    <result column="product_id" property="productId" jdbcType="BIGINT" />
+	    <result column="lot_no" property="lotNo" jdbcType="BIGINT" />
+	    <result column="product_cd" property="productCd" jdbcType="LONGVARCHAR" />
+	    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+	    <result column="mgt_product_name" property="mgtProductName" jdbcType="VARCHAR" />
+	    <result column="tax_kbn" property="taxKbn" jdbcType="VARCHAR" />
+	    <result column="choices_alt_stock_item_row_cd" property="choicesAltStockItemRowCd" jdbcType="VARCHAR" />
+	    <result column="choices_alt_stock_item_col_cd" property="choicesAltStockItemColCd" jdbcType="VARCHAR" />
+	    <result column="trade_product_mgt_id" property="tradeProductMgtId" jdbcType="VARCHAR" />
+	    <result column="trade_dtls_opt" property="tradeDtlsOpt" jdbcType="VARCHAR" />
+	    <result column="buy_opt_commission_txt" property="buyOptCommissionTxt" jdbcType="LONGVARCHAR" />
+	    <result column="buy_opt_commission_txt_hist" property="buyOptCommissionTxtHist" jdbcType="LONGVARCHAR" />
+	    <result column="buy_opt_commission" property="buyOptCommission" jdbcType="BIGINT" />
+	    <result column="buy_opt_commission_edit" property="buyOptCommissionEdit" jdbcType="BIGINT" />
+	    <result column="gift_packing_type" property="giftPackingType" jdbcType="VARCHAR" />
+	    <result column="gift_packing_type_edit" property="giftPackingTypeEdit" jdbcType="VARCHAR" />
+	    <result column="gift_commission" property="giftCommission" jdbcType="BIGINT" />
+	    <result column="gift_commission_edit" property="giftCommissionEdit" jdbcType="BIGINT" />
+	    <result column="gift_msg" property="giftMsg" jdbcType="VARCHAR" />
+	    <result column="gift_msg_edit" property="giftMsgEdit" jdbcType="VARCHAR" />
+	    <result column="noshi_type" property="noshiType" jdbcType="VARCHAR" />
+	    <result column="noshi_type_edit" property="noshiTypeEdit" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name1" property="noshiPresenterName1" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name1_edit" property="noshiPresenterName1Edit" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name2" property="noshiPresenterName2" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name2_edit" property="noshiPresenterName2Edit" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name3" property="noshiPresenterName3" jdbcType="VARCHAR" />
+	    <result column="noshi_presenter_name3_edit" property="noshiPresenterName3Edit" jdbcType="VARCHAR" />
+	    <result column="tarde_dtls_dscnt_bfr_uptprc" property="tardeDtlsDscntBfrUptprc" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_dscnt_amt" property="tardeDtlsDscntAmt" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_untprc" property="tardeDtlsUntprc" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_untprc_edit" property="tardeDtlsUntprcEdit" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_quantity" property="tardeDtlsQuantity" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_quantity_edit" property="tardeDtlsQuantityEdit" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_pt_rate" property="tardeDtlsPtRate" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_pt" property="tardeDtlsPt" jdbcType="BIGINT" />
+	    <result column="tarde_dtls_amt_subtotal" property="tardeDtlsAmtSubtotal" jdbcType="BIGINT" />
+	    <result column="commission_subtotal" property="commissionSubtotal" jdbcType="BIGINT" />
+	    <result column="tmsale_product_flg" property="tmsaleProductFlg" jdbcType="TINYINT" />
+	    <result column="trade_dtls_cancle_fin_flg" property="tradeDtlsCancleFinFlg" jdbcType="TINYINT" />
+	    <result column="trade_dtls_cancle_date" property="tradeDtlsCancleDate" jdbcType="TIMESTAMP" />
+	    <result column="shopping_day_disp_txt" property="shoppingDayDispTxt" jdbcType="VARCHAR" />
+	    <result column="shopping_timlmt_day" property="shoppingTimlmtDay" jdbcType="TIMESTAMP" />
+	    <result column="div_timlmt_day" property="divTimlmtDay" jdbcType="TIMESTAMP" />
+	    <result column="digicon_ktn" property="digiconKtn" jdbcType="VARCHAR" />
+	    <result column="adult_flg" property="adultFlg" jdbcType="TINYINT" />
+	    <result column="age_limit" property="ageLimit" jdbcType="TINYINT" />
+	    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+	    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+	    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+	    <result column="create_id" property="createId" jdbcType="BIGINT" />
+	    <result column="update_id" property="updateId" jdbcType="BIGINT" />
+	    <result column="create_pgm_id" property="createPgmId" jdbcType="VARCHAR" />
+	    <result column="update_pgm_id" property="updatePgmId" jdbcType="VARCHAR" />
+	    <result column="version" property="version" jdbcType="BIGINT" />
+	</resultMap>
+	<sql id="Base_Column_List" >
+	    id, trade_dtls_no, trade_id, product_id, lot_no, product_cd, product_name, mgt_product_name, 
+	    tax_kbn, choices_alt_stock_item_row_cd, choices_alt_stock_item_col_cd, trade_product_mgt_id, 
+	    trade_dtls_opt, buy_opt_commission_txt, buy_opt_commission_txt_hist, buy_opt_commission, buy_opt_commission_edit, gift_packing_type, gift_packing_type_edit, 
+	    gift_commission, gift_commission_edit, gift_msg, gift_msg_edit, noshi_type, noshi_type_edit, 
+	    noshi_presenter_name1, noshi_presenter_name1_edit, noshi_presenter_name2, noshi_presenter_name2_edit, 
+	    noshi_presenter_name3, noshi_presenter_name3_edit, tarde_dtls_dscnt_bfr_uptprc, tarde_dtls_dscnt_amt, 
+	    tarde_dtls_untprc, tarde_dtls_untprc_edit, tarde_dtls_quantity, tarde_dtls_quantity_edit, 
+	    tarde_dtls_pt_rate, tarde_dtls_pt, tarde_dtls_amt_subtotal, commission_subtotal, 
+	    tmsale_product_flg, trade_dtls_cancle_fin_flg, trade_dtls_cancle_date, shopping_day_disp_txt, 
+	    shopping_timlmt_day, div_timlmt_day, digicon_ktn, adult_flg, age_limit, del_flg, 
+	    create_date, update_date, create_id, update_id, create_pgm_id, update_pgm_id, version
+    </sql>
+
+	<select id="getTradeDtlsById" parameterType="java.lang.Long"
+		resultType="grpc.trade.dto.TradeDtlsDto"
+		resultMap="resultMap">
+
+		select
+		<include refid="Base_Column_List" />
+		from trade_dtls
+		where del_flg = 0 and id = #{id}
+
+	</select>
+
+	<select id="getTradeDtlsByTradeId" parameterType="java.util.List"
+		resultType="java.util.List"
+		resultMap="resultMap">
+
+		select
+		<include refid="Base_Column_List" />
+		from trade_dtls
+		where del_flg = 0 and trade_id in
+		<foreach item="item" collection="list" separator="," open="(" close=")" index="">
+			#{item}
+		</foreach>
+	</select>
+
+
+
+
+</mapper>
